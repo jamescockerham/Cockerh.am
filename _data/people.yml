@@ -1,0 +1,6 @@
+# _data/people.yml
+- id: example-1
+  name: John Doe
+  birth: 1900-01-01
+  death: 1980-01-01
+  notes: Example person – replace me!

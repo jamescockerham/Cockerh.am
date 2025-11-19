@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Statistics – Cockerham Surname</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header><h1>Cockerham Live Statistics</h1><p>Automatically updated global & U.S. data</p></header>
+  <nav><!-- same nav as index.html --></nav>
+
+  <main>
+    <p class="updated">Last updated: <span id="updated">Loading...</span></p>
+
+    <h2>U.S. Historical Ranking (1880–2025)</h2>
+    <canvas id="usChart" height="120"></canvas>
+
+    <h2>Top Countries Today</h2>
+    <canvas id="countryChart" height="120"></canvas>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script>
+    fetch('/_data/stats.yml')
+      .then(r => r.text())
+      .then(text => jsyaml.load(text))
+      .then(data => {
+        document.getElementById('updated').textContent = data.last_updated;
+
+        new Chart(document.getElementById('usChart'), {
+          type: 'line',
+          data: { labels: ['1880','1910','1940','1990','2000','2010','2025'],
+            datasets: [{ label: 'U.S. Rank', data: [4281,5123,5980,6521,6633,6943,data.us_rank], borderColor: '#2563eb', tension: 0.3 }]
+          },
+          options: { responsive: true }
+        });
+
+        const countries = data.top_countries.map(c => c.country);
+        const bearers = data.top_countries.map(c => c.bearers);
+        new Chart(document.getElementById('countryChart'), {
+          type: 'bar',
+          data: { labels: countries, datasets: [{ label: 'Bearers', data: bearers, backgroundColor: '#3b82f6' }] },
+          options: { responsive: true }
+        });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+global_rank: 71148
+global_bearers: 7000
+us_rank: 6932
+us_bearers: 4920
+top_countries:
+  - country: United States
+    bearers: 4920
+  - country: England
+    bearers: 1200
+  - country: Australia
+    bearers: 380
+  - country: Canada
+    bearers: 210
+last_updated: 2025-11-19

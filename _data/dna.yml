@@ -1,0 +1,7 @@
+# _data/dna.yml
+# Example ethnicity results
+- person_id: example-1
+  ethnicity:
+    British & Irish: 45%
+    French & German: 30%
+    Scandinavian: 25%
