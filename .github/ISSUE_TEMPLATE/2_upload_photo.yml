@@ -1,0 +1,37 @@
+name: 📸 Upload Photo
+description: Add a family photo, portrait, or document scan
+title: "[Photo] "
+labels: [photo]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Attach images directly (drag & drop works!). We'll add them to the gallery.
+
+  - type: textarea
+    attributes:
+      label: Who is in the photo & approximate date
+      placeholder: e.g., "James Cockerham family reunion, Texas 1992"
+      value:
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: People tagged (left to right, or by name)
+      placeholder: |
+        - James Cockerham (b. 1965)
+        - Mary Smith Cockerham
+        - etc.
+
+  - type: input
+    attributes:
+      label: Source / Owner (if known)
+      placeholder: Scanned from Aunt Susan's album
+
+  - type: checkboxes
+    attributes:
+      label: Permission
+      options:
+        - label: I have permission to share this photo publicly
+          required: true

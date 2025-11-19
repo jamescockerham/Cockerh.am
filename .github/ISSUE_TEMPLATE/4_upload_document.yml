@@ -1,0 +1,24 @@
+name: 📄 Upload Document / Source
+description: Census, will, deed, obituary, Bible record, etc.
+title: "[Document] "
+labels: [document]
+body:
+  - type: markdown
+    attributes:
+      value: Attach PDFs, scans, or photos of documents.
+
+  - type: textarea
+    attributes:
+      label: Description
+      placeholder: 1850 Census – Moses Cockerham household, Surry Co, NC
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: People mentioned
+      placeholder: List names and relationships if known
+
+  - type: input
+    attributes:
+      label: Year / Location

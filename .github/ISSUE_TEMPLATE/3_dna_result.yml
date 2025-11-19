@@ -1,0 +1,46 @@
+name: 🧬 Submit Y-DNA / Autosomal / mtDNA Results
+description: Add yourself (or a relative) to the DNA tables
+title: "[DNA] "
+labels: [dna]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We support Big Y, Y-111, Family Finder, mtDNA, etc.
+
+  - type: dropdown
+    attributes:
+      label: Test type
+      options:
+        - Y-DNA (Big Y-700, Y-111, etc.)
+        - Autosomal (Family Finder, Ancestry, 23andMe, MyHeritage)
+        - mtDNA
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Kit number or tester name (public part only)
+      placeholder: e.g., FTDNA kit 987654 or "J.C. 1990"
+
+  - type: textarea
+    attributes:
+      label: Key results
+      description: Haplogroup, terminal SNP, notable matches, etc.
+      placeholder: |
+        Haplogroup: R-FT123456
+        Terminal SNP: R-BY98765
+        Matches: Group 3 in Cockerham project
+
+  - type: input
+    attributes:
+      label: Most distant known paternal ancestor (for Y-DNA)
+      placeholder: William Cockerham, b. 1780 Lancashire
+
+  - type: checkboxes
+    attributes:
+      label: OK to show on public DNA page?
+      options:
+        - label: Yes, display my results publicly (recommended!)
+          required: true

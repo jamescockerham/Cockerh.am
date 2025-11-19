@@ -1,0 +1,60 @@
+name: 🧑 Add Person / Branch to Family Tree
+description: Add yourself, parents, grandparents, or any Cockerham (or variant) relative
+title: "[Tree] "
+labels: [family-tree]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for growing the tree! Fill out as much as you know — even partial info helps.
+
+  - type: input
+    attributes:
+      label: Your full name
+      placeholder: John William Cockerham
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Connection to existing tree (if known)
+      description: e.g., "Son of James Cockerham (b. 1965)", "Descendant of William Cockerham of Lancashire", or "No known link yet"
+      placeholder: How do you connect?
+
+  - type: textarea
+    attributes:
+      label: Birth / Death details
+      description: Dates (exact or approximate) and places
+      placeholder: |
+        Born: 15 Mar 1990, Charlotte, NC, USA
+        Died: (leave blank if living)
+
+  - type: textarea
+    attributes:
+      label: Parents
+      placeholder: |
+        Father: Full name + birth year/location if known
+        Mother: Full name (incl. maiden) + birth year/location
+
+  - type: textarea
+    attributes:
+      label: Spouse(s) & Children
+      placeholder: |
+        Spouse: Jane Doe (m. 2015)
+        Children:
+        - Alice Cockerham (b. 2018)
+        - etc.
+
+  - type: textarea
+    attributes:
+      label: Additional notes / stories / sources
+      placeholder: Migration story, occupation, fun facts, census links, etc.
+
+  - type: checkboxes
+    attributes:
+      label: Privacy
+      options:
+        - label: OK to display all living people in this submission publicly
+          required: false
+        - label: Please hide living people (show only year of birth or "Living")
+          required: false

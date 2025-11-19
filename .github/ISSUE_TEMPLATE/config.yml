@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General Questions or Chat
+    url: https://github.com/jamescockerham/Cockerh.am/discussions
+    about: Use Discussions for questions — issues are only for adding data to the site.

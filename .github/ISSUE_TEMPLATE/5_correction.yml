@@ -1,0 +1,16 @@
+name: ⚠️ Correction or Update
+description: Fix wrong date, name, link, or merge duplicates
+title: "[Fix] "
+labels: [correction]
+body:
+  - type: textarea
+    attributes:
+      label: What needs fixing?
+      description: Link to the person/page if possible (e.g., /people/james-1965.md)
+      placeholder: James Cockerham (b. 1965) should have middle name "Alan"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Correct information + source
