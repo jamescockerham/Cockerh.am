@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cockerh.am — Home</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
 </head>
 <body class="light">
 
@@ -32,7 +32,22 @@
   </nav>
 
   <main>
-    <!-- your home page content here -->
+    <h1 style="text-align:center;margin-top:40px;">Welcome, Cousin</h1>
+    <p style="text-align:center;font-size:1.3em;max-width:720px;margin:40px auto;">
+      The open, ever-growing hub for every Cockerham (and Cockram, Cockrem…) on Earth.
+    </p>
+
+    <div style="display:grid;gap:25px;margin:60px auto;max-width:600px;text-align:center;">
+      <a href="/history/" class="button">Surname History & Live Statistics</a>
+      <a href="/tree/" class="button">Interactive Global Family Tree</a>
+      <a href="/dna/" class="button">Y-DNA Project</a>
+      <a href="/archive/" class="button">Photo & Document Archive</a>
+    </div>
+
+    <div class="cta">
+      <p>Have a photo, Bible record, DNA result, or just know your grandparents’ names?</p>
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Contribute in 2 minutes – no coding needed</a>
+    </div>
   </main>
 
   <footer>
@@ -46,14 +61,12 @@
       const toggle = document.getElementById('theme-toggle');
       const body = document.body;
 
-      // Hamburger toggle + ARIA
       hamburger.addEventListener('click', () => {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true');
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
         hamburger.setAttribute('aria-expanded', !expanded);
         nav.classList.toggle('open');
       });
 
-      // Close menu on link click
       nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('open');
@@ -61,7 +74,6 @@
         });
       });
 
-      // Dark mode
       if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         body.classList.add('dark');
         toggle.textContent = '🌙';
