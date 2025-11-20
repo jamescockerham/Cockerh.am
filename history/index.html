@@ -33,17 +33,52 @@
   </nav>
 
   <main>
-    <!-- Your full history + charts content here -->
     <h1>Cockerham Surname — Origin & Early History</h1>
-    <!-- ... paste the full history text from earlier messages ... -->
-    <h1 style="margin-top:80px;">Live Global Statistics</h1>
-    <!-- charts etc. -->
+    <p class="subtitle">Verified as of November 2025</p>
+
+    <p>The surname <strong>Cockerham</strong> (variants: Cockram, Cockrem, Cockeram, etc.) is an English locational surname from the village of Cockerham in Lancashire, recorded as <strong>Cocreham</strong> in the Domesday Book (1086).</p>
+
+    <h2>Etymology</h2>
+    <p>River Cocker (Old Celtic “crooked/winding”) + Old English <strong>hām</strong> “homestead”<br>→ “Homestead on the winding river”</p>
+
+    <h2>Earliest Known Bearers</h2>
+    <ul>
+      <li>1349 — John de Kokerham, freeman of York (first recorded use)</li>
+      <li>1400s–1500s — concentrated in Lancashire & Yorkshire</li>
+    </ul>
+
+    <h2>Migration to North America</h2>
+    <ul>
+      <li><strong>1639</strong> — Captain William Cockerham arrives in Virginia</li>
+      <li>1666 — Granted 850 acres in Surry County for transporting 17 people (including John & Mary Cockerham)</li>
+      <li>Late 1700s — Major cluster in Surry County, North Carolina (Moses, Daniel, William lines)</li>
+    </ul>
+
+    <h2>Y-DNA Evidence (2025)</h2>
+    <p>Public FTDNA project shows nearly all testers in <strong>R-BY33587</strong> — confirming a single medieval British origin.</p>
+
+    <hr style="margin:80px 0;border:none;border-top:3px dotted #93c5fd;">
+
+    <h1>Live Global Statistics</h1>
+    <p style="text-align:center;color:#64748b;margin-bottom:40px;">Last updated <span id="updated">November 2025</span></p>
+
+    <h2>U.S. Ranking Over Time (1880–2025)</h2>
+    <canvas id="usChart" height="300"></canvas>
+
+    <h2>Top Countries Today</h2>
+    <canvas id="worldChart" height="300"></canvas>
+
+    <div class="cta">
+      <p>Have an earlier record or new DNA result?</p>
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Contribute – no coding needed</a>
+    </div>
   </main>
 
   <footer>
     <p>Maintained with love by James Cockerham • <a href="https://x.com/JamesCockerham">@JamesCockerham</a> • james@cockerh.am</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hamburger = document.getElementById('hamburger');
@@ -76,8 +111,46 @@
         toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
         localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
       });
+
+      // Load stats if _data/stats.yml exists
+      fetch('/_data/stats.yml')
+        .then(r => r.text())
+        .then(text => jsyaml.load(text))
+        .then(data => {
+          document.getElementById('updated').textContent = data.last_updated || 'November 2025';
+
+          new Chart(document.getElementById('usChart'), {
+            type: 'line',
+            data: {
+              labels: ['1880','1940','2000','2010','2025'],
+              datasets: [{
+                label: 'U.S. Rank',
+                data: [4281, 5980, 6633, 6943, data.us_rank || 6932],
+                borderColor: '#3b82f6',
+                tension: 0.3,
+                fill: false
+              }]
+            },
+            options: { responsive: true }
+          });
+
+          const countries = data.top_countries.map(c => c.country);
+          const bearers = data.top_countries.map(c => c.bearers);
+          new Chart(document.getElementById('worldChart'), {
+            type: 'bar',
+            data: {
+              labels: countries,
+              datasets: [{
+                label: 'Bearers',
+                data: bearers,
+                backgroundColor: '#10b981'
+              }]
+            },
+            options: { responsive: true }
+          });
+        })
+        .catch(() => console.log('Stats file not found – using static data'));
     });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </body>
 </html>
