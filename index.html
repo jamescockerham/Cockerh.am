@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cockerh.am — The Living Home of Cockerham Family History</title>
+  <title>Cockerh.am — Home</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
 </head>
@@ -20,9 +20,8 @@
       <button id="hamburger" aria-label="Menu">☰</button>
       <ul id="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/history/">History</a></li>
+        <li><a href="/history/">History & Statistics</a></li>
         <li><a href="/tree/">Family Tree</a></li>
-        <li><a href="/stats/">Statistics</a></li>
         <li><a href="/archive/">Archive</a></li>
         <li><a href="/dna/">DNA Project</a></li>
         <li><a href="/resources/">Resources</a></li>
@@ -32,39 +31,41 @@
   </nav>
 
   <main>
-    <h1>Welcome to the Cockerham Family Hub</h1>
-    <p>We’re building the definitive, open, ever-growing home for every Cockerham (and every spelling variant) on the planet.</p>
+    <h1 style="text-align:center;margin-top:60px;">Welcome, Cousin</h1>
+    <p style="text-align:center;font-size:1.3em;max-width:700px;margin:40px auto;">
+      This is the living, collaborative home for every Cockerham (and Cockram, Cockrem…) on Earth.
+    </p>
 
-    <div class="grid" style="display:grid;gap:30px;margin-top:50px;">
-      <a href="/tree/" class="card">Interactive Global Family Tree</a>
-      <a href="/stats/" class="card">Live Surname Statistics</a>
-      <a href="/dna/" class="card">Y-DNA Project</a>
-      <a href="/archive/" class="card">Photo & Document Archive</a>
-      <a href="/history/" class="card">Surname History</a>
-      <a href="/resources/" class="card">External Resources</a>
+    <div style="display:grid;gap:30px;max-width:800px;margin:60px auto;text-align:center;">
+      <a href="/history/" class="button" style=width:100%;padding:20px;">Surname History & Live Statistics</a>
+      <a href="/tree/" class="button" style="width:100%;padding:20px;">Interactive Global Family Tree</a>
+      <a href="/dna/" class="button" style="width:100%;padding:20px;">Y-DNA Project</a>
+      <a href="/archive/" class="button" style="width:100%;padding:20px;">Photo & Document Archive</a>
     </div>
 
     <div class="cta">
-      <p>Have a photo, DNA result, or just your grandparents’ names?</p>
-      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Add Your Piece of History (no coding needed)</a>
+      <p>Got something to add? It takes 2 minutes and no coding.</p>
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Contribute Now</a>
     </div>
   </main>
 
   <footer>
-    <p>Maintained with love by James Cockerham • <a href="https://x.com/JamesCockerham">@JamesCockerham</a> • james@cockerh.am</a></p>
+    <p>Maintained with love by James Cockerham • <a href="https://x.com/JamesCockerham">@JamesCockerham</a> • james@cockerh.am</p>
   </footer>
 
   <script>
-    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
-    const t = document.getElementById('theme-toggle');
-    const b = document.body;
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      b.classList.add('dark'); t.textContent = '🌙';
-    }
-    t.addEventListener('click', () => {
-      b.classList.toggle('dark');
-      t.textContent = b.classList.contains('dark') ? '🌙' : '☀️';
-      localStorage.theme = b.classList.contains('dark') ? 'dark' : 'light';
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('hamburger').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
+      const t = document.getElementById('theme-toggle');
+      const b = document.body;
+      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        b.classList.add('dark'); t.textContent = '🌙';
+      }
+      t.addEventListener('click', () => {
+        b.classList.toggle('dark');
+        t.textContent = b.classList.contains('dark') ? '🌙' : '☀️';
+        localStorage.theme = b.classList.contains('dark') ? 'dark' : 'light';
+      });
     });
   </script>
 </body>

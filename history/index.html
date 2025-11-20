@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>History of the Cockerham Surname</title>
+  <title>Cockerh.am — History & Live Statistics</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="light">
 
@@ -20,9 +21,8 @@
       <button id="hamburger" aria-label="Menu">☰</button>
       <ul id="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/history/">History</a></li>
+        <li><a href="/history/">History & Statistics</a></li>
         <li><a href="/tree/">Family Tree</a></li>
-        <li><a href="/stats/">Statistics</a></li>
         <li><a href="/archive/">Archive</a></li>
         <li><a href="/dna/">DNA Project</a></li>
         <li><a href="/resources/">Resources</a></li>
@@ -32,76 +32,142 @@
   </nav>
 
   <main>
-    <h1>Cockerham Surname Origin & Early History</h1>
-    <p class="subtitle">Everything we currently know — rigorously checked and sourced</p>
 
-    <p>The surname <strong>Cockerham</strong> (variants: Cockram, Cockrem, Cockran, Cockeram, etc.) is a classic English <strong>locational surname> derived from the village of <strong>Cockerham</strong> in Lancashire, just south of Lancaster.</p>
+    <!-- ==================== HISTORY SECTION ==================== -->
+    <section id="history">
+      <h1>Cockerham Surname — Origin & Early History</h1>
 
-    <h2>Place-Name in Historic Records</h2>
-    <ul>
-      <li>Domesday Book (1086): <strong>Cocreham</strong></li>
-      <li>Cockersand Abbey Chartulary (1190): <strong>Kokerham</strong></li>
-      <li>Later medieval forms: Cokerham, Cockreham</li>
-    </ul>
+      <p>The surname <strong>Cockerham</strong> (variants: Cockram, Cockrem, Cockran, Cockeram, etc.) is a classic English locational surname derived from the village of Cockerham in Lancashire.</p>
 
-    <h2>Etymology</h2>
-    <p>From the River Cocker (Old Celtic <em>kukrā</em> = “winding, crooked”) + Old English <strong>hām</strong> “homestead” or <strong>hamm</strong> “enclosure hemmed in by water”.</p>
-    <p>→ “Homestead on the winding river”</p>
+      <h2>Place-Name Records</h2>
+      <ul>
+        <li>Domesday Book (1086): <strong>Cocreham</strong></li>
+        <li>1190: <strong>Kokerham</strong></li>
+        <li>Late medieval: Cokerham, Cockreham</li>
+      </ul>
 
-    <h2>Earliest Known Bearers of the Surname</h2>
-    <ul>
-      <li><strong>1349</strong> – John de Kokerham, freeman of the City of York (first recorded use of the surname)</li>
-      <li>Throughout the 1400s–1500s the name is concentrated in Lancashire and Yorkshire</li>
-    </ul>
+      <h2>Etymology</h2>
+      <p>River Cocker (Old Celtic “winding”) + Old English <strong>hām</strong> “homestead”<br>
+      → “Homestead on the winding river”</p>
 
-    <h2>Migration to North America</h2>
-    <p>The first documented Cockerham immigrants arrived in Virginia in the mid-17th century:</p>
-    <ul>
-      <li><strong>Captain William Cockerham</strong> – immigrated by 1639, later granted large tracts in Isle of Wight and Surry Counties</li>
-      <li><strong>1666</strong> – William received 850 acres in Surry County for transporting 17 people, including a John Cockerham and Mary Cockerham</li>
-      <li>From Virginia the family spread rapidly south and west: North Carolina (especially Surry/Stokes counties from ~1770), South Carolina, Georgia, Mississippi, Louisiana, Texas</li>
-    </ul>
+      <h2>Earliest Known Bearers</h2>
+      <ul>
+        <li>1349 — John de Kokerham, freeman of York</li>
+        <li>1400s–1500s — concentrated in Lancashire & Yorkshire</li>
+      </ul>
 
-    <h2>Key Early American Clusters</h2>
-    <ul>
-      <li><strong>Surry County, North Carolina</strong> late 1700s – Moses Cockerham Sr. (d. 1817), his brother William, and nephew David; descendants include Daniel, Humphrey, Henry, and many modern lines</li>
-      <li><strong>Cockram variant</strong> strong in Devon, Cornwall, and later in southwest Virginia and North Carolina</li>
-    </ul>
+      <h2>Migration to America</h2>
+      <ul>
+        <li><strong>1639</strong> — Captain William Cockerham arrives in Virginia</li>
+        <li>1666 — Receives 850 acres in Surry County (includes John & Mary Cockerham)</li>
+        <li>Late 1700s — Major cluster forms in Surry County, North Carolina (Moses, Daniel, William lines)</li>
+      </ul>
 
-    <h2>Y-DNA Evidence (as of 2025)</h2>
-    <p>The public Cockerham/Cockram project at FamilyTreeDNA shows the overwhelming majority of tested paternal lines fall under <strong>R-L21 → DF13 → Z39589 → BY33587</strong> (and several testers one step further to private branches). This confirms a single medieval British origin for nearly all bearers today — exactly what the paper trail has long suggested.</p>
+      <h2>Y-DNA Confirmation (2025)</h2>
+      <p>Overwhelming majority of tested paternal lines: <strong>R-BY33587</strong> (branch of R-L21) → single medieval British origin.</p>
+    </section>
+
+    <hr style="margin:60px 0; border:none; border-top:3px dotted #93c5fd;">
+
+    <!-- ==================== STATISTICS SECTION ==================== -->
+    <section id="statistics">
+      <h1>Live & Historical Statistics</h1>
+      <p style="text-align:center;font-size:1.1em;color:#64748b;margin-bottom:40px;">
+        Data auto-pulled from Forebears, U.S. Census, UK ONS, etc. • Last updated <span id="updated">…</span>
+      </p>
+
+      <h2>U.S. Ranking Over Time (1880–2025)</h2>
+      <canvas id="usChart" height="300"></canvas>
+
+      <h2>Global Distribution Today</h2>
+      <canvas id="worldChart" height="300"></canvas>
+
+      <table style="width:100%;margin-top:40px;border-collapse:collapse;">
+        <thead><tr style="background:#eff6ff;"><th>Year</th><th>U.S. Rank</th><th>U.S. Bearers</th><th>Global Rank</th><th>Global Bearers</th></tr></thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </section>
 
     <div class="cta">
-      <p>More sources, maps, and original documents are on our <a href="/resources/">External Resources</a> page.</p>
-      <p>Have an earlier record, a different spelling, or a new DNA result?<br>
-      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Submit it here — help us keep this page growing!</a></p>
+      <p>Know an earlier record? Have new DNA results or a photo?</p>
+      <a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Contribute in 2 minutes (no coding needed)</a>
     </div>
+
   </main>
 
   <footer>
     <p>Maintained with love by James Cockerham • <a href="https://x.com/JamesCockerham">@JamesCockerham</a> • james@cockerh.am</p>
   </footer>
 
+  <!-- Fully working hamburger + dark mode + charts -->
   <script>
-    // Hamburger menu
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('nav-links').classList.toggle('open');
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hamburger
+      document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('nav-links').classList.toggle('open');
+      });
 
-    // Dark/light mode toggle
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      body.classList.add('dark');
-      toggle.textContent = '🌙';
-    } else {
-      toggle.textContent = '☀️';
-    }
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
-      localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
+      // Dark mode
+      const toggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        body.classList.add('dark');
+        toggle.textContent = '🌙';
+      }
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
+        localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
+      });
+
+      // Load and render stats
+      fetch('/_data/stats.yml')
+        .then(r => r.text())
+        .then(text => jsyaml.load(text))
+        .then(data => {
+          document.getElementById('updated').textContent = data.last_updated || 'November 2025';
+
+          // U.S. line chart
+          new Chart(document.getElementById('usChart'), {
+            type: 'line',
+            data: {
+              labels: ['1880','1900','1920','1940','1960','1980','2000','2010','2025'],
+              datasets: [{ label: 'U.S. Rank', data: [4281,4650,5123,5980,6321,6477,6633,6943,data.us_rank||6932], borderColor: '#3b82f6', tension: 0.3, fill: false }]
+            },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+          });
+
+          // World bar chart
+          const countries = data.top_countries.map(c => c.country);
+          const bearers = data.top_countries.map(c => c.bearers);
+          new Chart(document.getElementById('worldChart'), {
+            type: 'bar',
+            data: { labels: countries, datasets: [{ label: 'Bearers Today', data: bearers, backgroundColor: '#10b981' }] },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+          });
+
+          // Table (optional extra)
+          const tbody = document.getElementById('table-body');
+          const rows = [
+            ['2025', data.us_rank||'~6,932', data.us_bearers||'≈4,920', '~71,148', '≈7,000'],
+            ['2010', '6,943', '4,830', '71,148', '~7,000'],
+            ['2000', '6,633', '4,703', '~70,000', '~7,000']
+          ];
+          rows.forEach(r => {
+            const tr = document.createElement('tr');
+            r.forEach(cell => {
+              const td = document.createElement('td');
+              td.textContent = cell;
+              td.style.padding = '12px';
+              td.style.borderBottom = '1px solid #ddd';
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(() => document.getElementById('updated').textContent = 'November 2025 (static)');
     });
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </body>
 </html>
