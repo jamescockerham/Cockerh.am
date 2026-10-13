@@ -1,92 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resources — Cockerh.am</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resources · Cockerham Family History</title>
+<meta name="description" content="Free genealogy resources for Kentucky research.">
+<link rel="stylesheet" href="/assets/style.css">
 </head>
-<body class="light">
-
-  <header>
-    <h1>Cockerh.am</h1>
-    <p>One surname. Thousands of cousins. One collaborative home.</p>
-  </header>
-
-  <div class="nav-bar">
-    <button id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
-    <button id="theme-toggle" aria-label="Toggle dark mode">☀️</button>
-  </div>
-
-  <nav id="main-nav" aria-label="Main navigation">
-    <ul id="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/history/">History & Statistics</a></li>
-      <li><a href="/tree/">Family Tree</a></li>
-      <li><a href="/archive/">Archive</a></li>
-      <li><a href="/dna/">DNA Project</a></li>
-      <li><a href="/resources/">Resources</a></li>
-      <li><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="contrib">Contribute →</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <h1>External Research Resources</h1>
-    <p style="font-size:1.1em;margin-bottom:40px;text-align:center;">The best places Cockerham researchers actually use — all verified working November 2025.</p>
-
-    <ul style="font-size:1.15em;line-height:2.2;">
-      <li>🌍 <a href="https://forebears.io/surnames/cockerham" target="_blank">Forebears — Global Distribution & Ranking</a></li>
-      <li>🧬 <a href="https://www.familytreedna.com/groups/cockerham/about/background" target="_blank">FamilyTreeDNA Cockerham Surname Project</a></li>
-      <li>🛡️ <a href="https://www.houseofnames.com/cockerham-family-crest" target="_blank">House of Names — Coat of Arms</a></li>
-      <li>📜 <a href="https://www.ancestry.com/name-origin?surname=cockerham" target="_blank">Ancestry.com Records</a></li>
-      <li>🔍 <a href="https://www.familysearch.org/search/record/results?q.surname=Cockerham" target="_blank">FamilySearch — Free Records</a></li>
-      <li>⚰️ <a href="https://www.findagrave.com/memorial/search?lastname=cockerham" target="_blank">Find a Grave</a></li>
-      <li>🌳 <a href="https://www.wikitree.com/genealogy/COCKERHAM" target="_blank">WikiTree Cockerham Genealogy</a></li>
-      <li>👥 <a href="https://www.geni.com/surnames/cockerham" target="_blank">Geni.com Cockerham Profiles</a></li>
-    </ul>
-
-    <div class="cta">
-      <p>Found a better resource or a broken link?<br><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose" class="button">Tell us</a></p>
-    </div>
-  </main>
-
-  <footer>
-    <p>Maintained with love by James Cockerham • <a href="https://x.com/JamesCockerham">@JamesCockerham</a></p>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburger = document.getElementById('hamburger');
-      const nav = document.getElementById('main-nav');
-      const toggle = document.getElementById('theme-toggle');
-      const body = document.body;
-
-      hamburger.addEventListener('click', () => {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !expanded);
-        nav.classList.toggle('open');
-      });
-
-      nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          nav.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        body.classList.add('dark');
-        toggle.textContent = '🌙';
-      } else {
-        toggle.textContent = '☀️';
-      }
-
-      toggle.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        toggle.textContent = body.classList.contains('dark') ? '🌙' : '☀️';
-        localStorage.theme = body.classList.contains('dark') ? 'dark' : 'light';
-      });
-    });
-  </script>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/">Cockerh<span>.</span>am</a>
+<nav aria-label="Main"><ul>
+<li><a href="/about/">About</a></li>
+<li><a href="/research/">Research</a></li>
+<li><a href="/contribute/">Contribute</a></li>
+<li><a href="/resources/">Resources</a></li>
+</ul></nav></div></header>
+<main id="main" class="wrap">
+<h1>Resources</h1>
+<p class="lede">Good places to start researching Kentucky families. Most are free.</p>
+<h2>Records &amp; trees</h2>
+<ul class="list">
+<li><a href="https://www.familysearch.org/">FamilySearch</a>: free records and a shared world tree.</li>
+<li><a href="https://www.findagrave.com/">Find a Grave</a>: cemetery and burial records with photos.</li>
+<li><a href="https://www.archives.gov/research/genealogy">U.S. National Archives: Genealogy</a>: census, military and immigration records.</li>
+<li><a href="https://chroniclingamerica.loc.gov/">Chronicling America</a>: historic U.S. newspapers from the Library of Congress.</li>
+</ul>
+<h2>Kentucky</h2>
+<ul class="list">
+<li><a href="https://kdla.ky.gov/">Kentucky Department for Libraries and Archives</a>: state records, vital records and county materials.</li>
+<li><a href="https://history.ky.gov/">Kentucky Historical Society</a>: library, collections and genealogy help.</li>
+<li><a href="https://kentuckygenealogy.org/">Kentucky Genealogical Society</a>.</li>
+<li><a href="https://kdnp.uky.edu/">Kentucky Digital Newspaper Program</a> (University of Kentucky).</li>
+<li><a href="https://www.kygenweb.net/">KYGenWeb</a>: volunteer county-by-county resources.</li>
+</ul>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>A family-history project by <a href="https://james.cockerh.am">James Cockerham</a>, Lexington, Kentucky. Research in progress: please verify before you copy.</p>
+<p><a href="https://github.com/jamescockerham/Cockerh.am/issues/new/choose">Share information on GitHub</a></p>
+</div></footer>
 </body>
 </html>

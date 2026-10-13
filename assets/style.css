@@ -1,0 +1,23 @@
+:root{--bg:#faf6ef;--paper:#fffdf8;--ink:#2b2420;--muted:#6b5d52;--line:#e4d8c6;--accent:#8a3b12;--green:#3f5e3a;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1916;--paper:#26201c;--ink:#efe6da;--muted:#b9a99a;--line:#3d342d;--accent:#e2a06b;--green:#9cc293}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 var(--sans)}
+.wrap{max-width:820px;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent)}:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--paper);padding:.5rem}
+h1,h2,.brand{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.15;margin:.3rem 0 1rem}h2{font-size:1.45rem;margin:2.2rem 0 .6rem}
+.site-header{border-bottom:3px double var(--line);background:var(--paper)}
+.site-header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding-top:.8rem;padding-bottom:.8rem}
+.brand{font-size:1.45rem;color:var(--ink);text-decoration:none}.brand span{color:var(--accent)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.1rem;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--accent)}
+main{padding-top:2.5rem;padding-bottom:3rem}
+.hero{text-align:center;padding:1.5rem 0 1rem}.eyebrow{font:italic 1.05rem var(--serif);color:var(--green);margin:0}
+.lede{font-size:1.18rem;color:var(--muted)}.hero .lede{max-width:36rem;margin:0 auto 1.2rem}
+.btn{display:inline-block;background:var(--accent);color:var(--paper);padding:.55rem 1.1rem;border-radius:6px;text-decoration:none;margin:.25rem}.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.5rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:1.1rem 1.25rem;text-decoration:none;color:var(--ink);transition:border-color .15s}.card:hover{border-color:var(--accent)}
+.card h2{font-size:1.2rem;margin:0 0 .3rem;color:var(--accent)}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.list li{margin:.35rem 0}
+.note{background:var(--paper);border-left:4px solid var(--green);padding:.8rem 1rem;color:var(--muted)}
+.site-footer{border-top:3px double var(--line);color:var(--muted);font-size:.9rem;padding:1.4rem 0}.site-footer p{margin:.25rem 0}

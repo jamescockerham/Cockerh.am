@@ -1,9 +1,5 @@
-# Cockerh.am — The Living Home of Cockerham Family History 🌳
+# Cockerh.am
 
-Live site → https://cockerh.am
+Genealogy hub for the Cockerham surname, run by James Cockerham. Plain static HTML/CSS served by GitHub Pages (`.nojekyll`).
 
-Interactive tree • Live statistics • DNA project • Photo archive • All built by the family, for the family.
-
-Zero coding required to contribute — just open an issue and we’ll add your branch, photo, or DNA result in hours.
-
-→ https://cockerh.am/contribute
+Contribute via [GitHub issues](https://github.com/jamescockerham/Cockerh.am/issues/new/choose).
